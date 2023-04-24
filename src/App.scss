@@ -1,0 +1,501 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 2s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.squares {
+
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .square {
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #80808070;
+    border: 2px solid #808080;
+    transition: all 0.5s;
+
+    &.big {
+      width: 200px;
+      height: 200px;
+      width: 600px;
+    }
+
+    &.small {
+      width: 150px;
+      height: 150px;
+    }
+
+    &.spin {
+      animation: App-logo-spin infinite 10s linear;
+
+      span {
+        animation-direction: reverse;
+      }
+    }
+
+    &.spin-back {
+      animation: App-logo-spin infinite 10s linear;
+      animation-direction: reverse;
+
+      span {
+        animation-direction: reverse;
+      }
+    }
+
+    &.big {
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+}
+
+$gray: gray;
+$blue: blue;
+$red: crimson;
+$pink: pink;
+$yellow: darkorange;
+$green: greenyellow;
+$skyblue: skyblue;
+
+button {
+  display: inline-block;
+  min-width: 70px;
+  margin: 10px;
+  padding: .1rem 1rem;
+  border-radius: 10rem;
+  color: #fff;
+  // text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid $gray;
+  outline: none;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $gray;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: darken($gray, 15%);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: #fff;
+
+    &:before {
+      width: 100%;
+    }
+  }
+
+  &.blue {
+    border: 1px solid $blue;
+
+    &:after {
+      background-color: $blue;
+    }
+
+    &:before {
+      background-color: darken($blue, 15%);
+    }
+  }
+
+  &.red {
+    border: 1px solid $red;
+
+    &:after {
+      background-color: $red;
+    }
+
+    &:before {
+      background-color: darken($red, 15%);
+    }
+  }
+
+  &.pink {
+    border: 1px solid $pink;
+
+    &:after {
+      background-color: $pink;
+    }
+
+    &:before {
+      background-color: darken($pink, 15%);
+    }
+  }
+
+  &.yellow {
+    border: 1px solid $yellow;
+
+    &:after {
+      background-color: $yellow;
+    }
+
+    &:before {
+      background-color: darken($yellow, 15%);
+    }
+  }
+
+  &.green {
+    border: 1px solid $green;
+
+    &:after {
+      background-color: $green;
+    }
+
+    &:before {
+      background-color: darken($green, 15%);
+    }
+  }
+
+  &.skyblue {
+    border: 1px solid $skyblue;
+
+    &:after {
+      background-color: $skyblue;
+    }
+  }
+}
+
+.circles {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #80808070;
+    border: 2px solid #808080;
+  }
+}
+
+.circles2 {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .circle2 {
+    width: 120px;
+    height: 120px;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #80808070;
+    border: 2px solid #808080;
+
+  }
+}
+
+.circles3 {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .circle3 {
+    width: 120px;
+    height: 120px;
+    border-radius: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #80808070;
+    border: 2px solid #808080;
+  }
+}
+
+input {
+cursor: pointer;
+  font-family: monospace;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  background-color: white;
+  border: 1px solid;
+  padding: 5px 7px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 10px 23px -12px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 10px 23px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 10px 23px -12px rgba(0, 0, 0, 0.75);
+  color: black;
+  margin: 5px;
+  width: 70%;
+
+
+
+}
+
+
+select {
+  font-size: 30px;
+  outline: none;
+  border: none;
+  background-color: skyblue;
+  padding: 5px 7px;
+  border-radius: 5px;
+  color: white;
+  margin: 5px;
+}
+
+label {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 26px;
+  user-select: none;
+  transition: all 0.3s;
+  margin: 5px;
+}
+
+[type=checkbox]:checked+label {
+  background-color: skyblue;
+}
+
+[type=checkbox] {
+  display: none;
+}
+
+fieldset {
+  border: 1px solid skyblue;
+  margin: 10px;
+
+  legend {
+    color: white;
+  }
+
+  .field {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+
+
+.checkbox {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 26px;
+  user-select: none;
+  transition: all 0.3s;
+  margin: 5px;
+
+  &.active {
+    background-color: skyblue;
+  }
+}
+
+.select {
+  cursor: pointer;
+  transition: all 0.3s;
+
+  div {
+    &:hover {
+      color: skyblue;
+    }
+  }
+
+  .selected {
+    padding: 3px;
+    border: 2px solid skyblue;
+    user-select: none;
+    cursor: auto;
+  }
+
+}
+
+.Clients-list {
+  width: 100%;
+  border-radius: 10px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(25, 182, 208, 1) 100%);
+
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.create {
+  border: 1px solid #ffa600;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #ffa60061;
+}
+
+// .square {
+//   width: 250px;
+//   height: 250px;
+//   border-radius: 5px;
+//   color: white;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: #80808070;
+//   border: 2px solid #808080;
+//   transition: all 0.5s;
+
+// }
+
+.styled-table {
+  background-color: whitesmoke;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  color: black;
+
+}
+
+.styled-table thead tr {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(25, 182, 208, 1) 100%);
+  color: #ffffff;
+  text-align: left;
+  color:white;
+}
+
+.styled-table th{
+  color:white;
+  font-size: 25px;
+  padding: 12px 15px;
+}
+.styled-table td {
+  padding: 12px 15px;
+  color: #1417ac;
+
+
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  color: black;
+}
+
+
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 1px solid #1417ac;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: black;
+}
+
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+
+}
