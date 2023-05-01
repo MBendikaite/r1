@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { eurSmall } from '../Social/Icons';
+import { eurSmall } from '../Icons/icons';
 export default function ClientEdit({ editModalData, setEditModalData, setEditData }) {
 
     const [count, setCount] = useState(0);
@@ -16,7 +16,7 @@ export default function ClientEdit({ editModalData, setEditModalData, setEditDat
     const save = _ => {
         setEditData({
             count,
-            id: editModalData
+            id: editModalData.id
         });
         setEditModalData(null);
     }
@@ -44,7 +44,7 @@ export default function ClientEdit({ editModalData, setEditModalData, setEditDat
                                 <div className="mb-4">
                                     <label className="form-label">Please enter amount</label>
                                     <label className="form-label"><span><span style={{ fontSize: "20px" }}> {count}{eurSmall}</span></span></label>
-                                    <input type="number" placeholder='Enter amount' id="form1" className="form-control form-icon-trailing" min="1" value={count} onChange={doCount} /><label className="form-label" htmlFor="form1"></label>
+                                    <input type='number' placeholder='Enter amount' id="form1" className="form-control form-icon-trailing" min="1" value={count} onChange={doCount} /><label className="form-label" htmlFor="form1"></label>
                                 </div>
                             </div>
                         </div>
@@ -58,5 +58,3 @@ export default function ClientEdit({ editModalData, setEditModalData, setEditDat
         </div>
     );
 }
-
-

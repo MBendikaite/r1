@@ -1,10 +1,11 @@
-
-export default function ClientDelete({data, deleteModalData, setDeleteModalData, setDeleteData }) {
-
-    const destroy = _ => {
+export default function ClientDelete({ deleteModalData, setDeleteModalData, setDeleteData }) {
+    
+  const destroy = _ => {
         setDeleteData(deleteModalData)
         setDeleteModalData(null)
     }
+
+    
 
 
     if (null === deleteModalData) {

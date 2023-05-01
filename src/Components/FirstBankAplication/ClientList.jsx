@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { userBig, userSmall, eurSmall, eurBig, bank } from "../Social/Icons";
+import { useState } from 'react';
+import { userBig, userSmall, eurSmall, eurBig, bank } from '../Icons/icons';
 
-export default function ClientsList({ stat, data, setEditModalData, setDeleteModalData, setCreateData, editData, setEditData }) {
+export default function ClientsList({ stat, data, setEditModalData, setDeleteModalData, setCreateData,  setEditData, countSort, sortBalance, editModalData}) {
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [count, setcount] = useState(0);
+    const [count, setCount] = useState(0);
 
     const doName = e => {
-        setName(e.target.value);
+       setName(e.target.value);
     }
 
     const doLastName = e => {
@@ -20,29 +20,34 @@ export default function ClientsList({ stat, data, setEditModalData, setDeleteMod
             lastName,
             count
         });
-    
+        setName('');
+        setLastName('');
+        setCount(0)
+
     }
 
     const doEdit = client => {
         setEditModalData(client);
     }
+
     const doDelete = client => {
         setDeleteModalData(client);
     }
 
-    const doDeleteBalance = c => {
 
-        console.log(c);
+    const doDeleteBalance = c => {
+       setEditData({ id: c.id, count: 0})
     }
 
 
-   
+ 
 
     if (null === data) {
         return (
             <h2>LOADING...</h2>
         );
     }
+
 
     return (
         <>
@@ -54,7 +59,9 @@ export default function ClientsList({ stat, data, setEditModalData, setDeleteMod
                         <span>Total  Clients: {stat.usersAmount} {userBig}</span>
 
                     </div> : null}
-
+                    <div className="sf-box">
+                    <div className={'sort' + sortBalance} onClick={countSort}>Sort Balance</div>
+                    </div>
             <div className="table">
                 <table className="table">
                     <thead>
@@ -73,8 +80,8 @@ export default function ClientsList({ stat, data, setEditModalData, setDeleteMod
                                 <td className="buttons">
 
                                     <button className="btn btn-outline-success" onClick={_ => doEdit(c)}>Deposit</button>
-                                    <button className="btn btn-outline-primary" onClick={_=> editData({ count: 0 })} >Withdrawal</button>
-                                    <button className="btn btn-outline-danger" onClick={_ => doDelete(c)}>Delete</button>
+                                    <button className="btn btn-outline-primary" onClick={() => doDeleteBalance(c)} >Withdrawal</button>
+                                    <button className="btn btn-outline-danger" type="submit" onClick={_ =>  doDelete(c) }>Delete</button>
                                 </td>
 
                             </tr>)
@@ -90,7 +97,7 @@ export default function ClientsList({ stat, data, setEditModalData, setDeleteMod
                 <div className="card-body">
                     <div className="mb-4">
                         <label style={{ color: 'white' }} className="form-label">Client Name</label>
-                        <input type="text" placeholder="Please enter client name" className="form-control" value={name} onChange={doName} />
+                        <input type="text" placeholder="Please enter client name" className="form-control"  value={name} onChange={doName} />
 
                     </div>
                     <div className="mb-4">
