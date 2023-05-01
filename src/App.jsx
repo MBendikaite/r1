@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import ClientDelete from './Components/FirstBankAplication/ClientDelete';
 import ClientsList from './Components/FirstBankAplication/ClientList';
 import ClientEdit from './Components/FirstBankAplication/ClientEdit';
-import { bank } from './Components/Icons/icons';
+// import { bank } from './Components/Icons/icons';
 import MessageBox from './Components/FirstBankAplication/MessageBox';
 import axios from 'axios';
 import Animation from './Components/FirstBankAplication/Animation';
@@ -132,7 +132,7 @@ function App() {
         <>
        
             <nav className="navbar navbar-light bg-light">
-                <strong><span style={{ display: 'flex', gap: '20px', paddingLeft: '20px', fontSize: '25px' }}>{bank} My Bank  </span></strong>
+                <strong><span style={{ display: 'flex', gap: '20px', paddingLeft: '20px', fontSize: '25px' }}> My Bank  </span></strong>
             </nav>
             <div>
         <Animation/>
